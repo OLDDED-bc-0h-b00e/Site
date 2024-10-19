@@ -29,14 +29,13 @@ body, html {
 }
 
 video{
-    background-size: cover;
+    position: absolute;
+   
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
-    height: 140%;
+    width: 100%;
     overflow: hidden;
-  
-    
 }
 
 #about {
@@ -109,6 +108,8 @@ input, textarea {
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
 }
+
+
 
 @media (max-width: 200px) {
    .btn {

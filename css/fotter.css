@@ -1,0 +1,121 @@
+:root {
+    --ThumbColor: #454545; /*Цвет ползунка*/
+    --ScrollbarColor: transparent; /*Цвет фона скроллбара*/
+    --ThumbImg: url('https://static.tildacdn.com/tild3037-3037-4636-b733-343436373333/abstract_pattern_des.jpg'); /*Фоновое изображение*/
+    --ThumbBorder: 1000px; /*Скругление углов у ползунка*/
+    --ThumbOpacity: 1; /*Прозрачность ползунка*/
+    --ThumbOpacityActive: 1; /*Прозрачность ползунка по наведению*/
+    --ThumbWidth: 8px; /*Ширина ползунка в пасивном состоянии*/
+    --ThumbWidthActive: 12px; /*Ширина ползунка по наведению*/
+    --ScrollbarHeight: 99vh; /*Высота скроллбара*/
+    --ScrollbarPaddingRight: 3px; /*Отсуп справа*/
+    --CardsBorderColor: #2A87C5, #8716c1, #FD79C0; /*цвет обводки карточки*/
+    --CardsBorderOpacity: 0.3; /*цвет обводки карточки*/
+    --CardsOpacity:1; /*цвет подсвечивания карточки, чем меньше прозрачность, тем более заметно*/
+    --CardsBorderRadius: 0px; /*радиус скругления углов*/
+    }
+
+    @media screen and (max-width: 5000px) and (min-width: 768px) {
+        .custom-scrollbar-md {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        height: var(--ScrollbarHeight);
+        width: var(--ThumbWidth);
+        margin-left: 30px;
+        margin-right: var(--ScrollbarPaddingRight);
+        background: var(--ScrollbarColor);
+        transition-duration: 0.3s;
+        overflow: hidden;
+        }
+        .custom-wrapper-md {
+        width: 30px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        pointer-events: all;
+        background: transparent;
+        height: 100vh;
+        }
+        .custom-scrollbar-thumb-md {
+        width: 100%;
+        background-image: var(--ThumbImg);
+        background-color: var(--ThumbColor);
+        background-size: cover;
+        border-radius: var(--ThumbBorder);
+        position: absolute;
+        top: 0;
+        opacity: var(--ThumbOpacity);
+        transition: opacity 0.7s;
+        left: 0;
+        transform: translateY(0); 
+        cursor: grab;
+        }
+        .custom-scrollbar-thumb-md:active {
+        cursor: grabbing;
+        opacity: var(--ThumbOpacityActive);
+        }
+        .custom-scrollbar-thumb-md:hover, .custom-wrapper-md:hover .custom-scrollbar-thumb-md {
+        opacity: var(--ThumbOpacityActive);
+        }
+        .custom-wrapper-md:hover .custom-scrollbar-md, .custom-wrapper-md:active .custom-scrollbar-md {
+        width: var(--ThumbWidthActive);
+        }
+        .custom-scrollbar-thumb-md.hide {
+        opacity: 0;
+        }
+        ::-webkit-scrollbar {
+        width: 0px;
+        background-color: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        }
+        .uc-scroll-md {
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        top: 0;
+        }
+        .uc-scroll-md .custom-scrollbar-md {
+        pointer-events: all;
+        }
+        .uc-scroll.active-md {
+        pointer-events: all;
+        }
+        .uc-scroll.active-md .custom-scrollbar-md {
+        pointer-events: all;
+        }
+        .custom-scrollbar-thumb-md {
+        user-select: none;
+        }
+        .custom-scrollbar-thumb-md:active {
+        user-select: none;
+        }
+        .custom-scrollbar-thumb-md:hover, 
+        .custom-wrapper-md:hover .custom-scrollbar-thumb-md {
+        user-select: none;
+        }
+        .custom-wrapper-md:hover .custom-scrollbar-md, 
+        .custom-wrapper-md:active .custom-scrollbar-md {
+        user-select: none;
+        }
+        body {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        }
+        ::-webkit-scrollbar {
+        display: none;
+        }
+        body {
+        scrollbar-width: none;
+        }
+        @-moz-document url-prefix() {
+        html {
+        scrollbar-width: none;
+        }
+        }
+        }
