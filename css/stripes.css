@@ -1,0 +1,35 @@
+.stripe-container {
+    display:flex;
+    height: 50vh;
+    overflow-x:hidden;
+} 
+
+.stripe {
+    width: 20%;
+    height: 50vh;
+    transform: skewX(-20deg) translateY(0); 
+    position: relative; 
+    opacity: 0; 
+    background-size: cover; 
+    background-position: center; 
+    transition: opacity 1s ease-in-out, transform 0.2s ease;
+}
+
+.stripe-container > .stripe:first-child {
+    margin-left: -20%;
+}
+
+.stripe-container > .stripe:last-child {
+    margin-right: -20%;
+}
+
+.body__background--stripe{
+    background-color: black;
+}
+
+.anim{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+}

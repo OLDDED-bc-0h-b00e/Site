@@ -1,0 +1,117 @@
+@import url(./header.css);
+@import url(./fotter.css);
+@import url(./main.css);
+@import url(./stripes.css);
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.anim{
+     height: 50vh;
+     overflow-x: hidden;
+     overflow-y: auto;
+     perspective: 2px;
+}
+
+
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+video{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    height: 140%;
+    overflow: hidden;
+  
+    
+}
+
+#about {
+    background-color: #2196F3; /* Синий фон */
+    color: white;
+}
+
+#services {
+    background-color: #FF9800; /* Оранжевый фон */
+    color: white;
+}
+
+#testimonials {
+    background-color: #9C27B0; /* Фиолетовый фон */
+    color: white;
+}
+
+#contact {
+    background-color: #f44336; /* Красный фон */
+    color: white;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #4CAF50; /* Цвет текста кнопки */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+
+#animationContainer {
+    position:  absolute;
+    bottom: 0px; /* Position from the bottom of main */
+    left: 5px;
+    border-radius: 10px; /* Rounded corners */
+    width: 500px; /* Fixed width */
+    max-width: 500px; /* Max width for larger screens */
+    padding: 20px; /* Padding inside the box */
+    overflow: hidden; /* Hide overflowing text */
+    height: 200px; /* Fixed height to prevent resizing */
+    text-align: left;
+    z-index: 100;
+}
+
+#textExample {
+    background: linear-gradient(rgb(0, 255, 255), rgb(0, 235, 235), rgb(0, 215, 215), rgb(0, 195, 195), rgb(0, 255, 255)  );
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 28px;
+    transition: opacity 0.5s ease;
+    overflow: hidden; /* Hide overflowing text */
+}
+    @keyframes gradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 200px) {
+   .btn {
+       width: 100%;
+   }
+}
